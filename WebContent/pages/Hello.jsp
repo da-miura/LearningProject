@@ -1,12 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page contentType="text/html; charset=Shift-JIS"%>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
+<html:html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>„Éè„É≠„Éè„É≠„Éè„É≠„Éº</title>
+<title>Hello</title>
 </head>
-<body>
-
-</body>
-</html>
+<html:form action="/hello">
+	<table border="0">
+		<tr>
+			<td>ÇÊÇ§Ç±Çª<bean:write name="HelloForm" property="name" />Ç≥ÇÒÅI
+			</td>
+		</tr>
+	</table>
+</html:form>
+</html:html>
