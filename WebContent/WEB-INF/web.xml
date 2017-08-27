@@ -6,9 +6,9 @@
     The ASF licenses this file to You under the Apache License, Version 2.0
     (the "License"); you may not use this file except in compliance with
     the License.  You may obtain a copy of the License at
-   
+
          http://www.apache.org/licenses/LICENSE-2.0
-   
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,7 +22,23 @@
 
 <web-app>
   <display-name>Struts Blank Application</display-name>
-  
+
+   <!-- add start -->
+   <filter>
+     <filter-name>EncodeFilter</filter-name>
+     <filter-class>filters.SetCharacterEncodingFilter
+     </filter-class>
+     <init-param>
+       <param-name>encoding</param-name>
+       <param-value>Shift_JIS</param-value>
+     </init-param>
+   </filter>
+   <filter-mapping>
+     <filter-name>EncodeFilter</filter-name>
+     <url-pattern>/*</url-pattern>
+   </filter-mapping>
+   <!--add end -->
+
   <!-- Standard Action Servlet Configuration -->
   <servlet>
     <servlet-name>action</servlet-name>

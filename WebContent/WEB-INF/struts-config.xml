@@ -6,9 +6,9 @@
     The ASF licenses this file to You under the Apache License, Version 2.0
     (the "License"); you may not use this file except in compliance with
     the License.  You may obtain a copy of the License at
-   
+
          http://www.apache.org/licenses/LICENSE-2.0
-   
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -40,6 +40,7 @@
 <!-- ================================================ Form Bean Definitions -->
 
     <form-beans>
+    <form-bean name="HelloForm" type="hello.form.HelloForm" />
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"
@@ -78,9 +79,9 @@
     <global-forwards>
         <!-- Default forward to "Welcome" action -->
         <!-- Demonstrates using index.jsp to forward -->
-        <forward
+      <!-- <forward
             name="welcome"
-            path="/Welcome.do"/>
+            path="/Welcome.do"/> -->
     </global-forwards>
 
 
@@ -89,9 +90,20 @@
     <action-mappings>
             <!-- Default "Welcome" action -->
             <!-- Forwards to Welcome.jsp -->
-        <action
+       <!-- <action
             path="/Welcome"
-            forward="/pages/Welcome.jsp"/>
+            forward="/pages/Welcome.jsp"/> -->
+
+     <action
+       attribute="HelloForm"
+       input="/pages/Who.jsp"
+       name="HelloForm"
+       path="/hello"
+       type="hello.HelloAction"
+       scope="session"
+       validate="true">
+         <forward name="success" path="/pages/Hello.jsp" />
+     </action>
 
     <!-- sample input and input submit actions
 
@@ -163,7 +175,7 @@
                        value="/WEB-INF/tiles-defs.xml" />
       <set-property property="moduleAware" value="true" />
     </plug-in>
-  -->  
+  -->
 
 
   <!-- =================================================== Validator plugin -->
