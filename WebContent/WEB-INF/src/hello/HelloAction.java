@@ -1,6 +1,8 @@
 package hello;
 
- import javax.servlet.http.HttpServletRequest;
+ import hello.form.HelloForm;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
@@ -9,8 +11,6 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
-import hello.form.HelloForm;
 
 /**
  * HelloAction.java
@@ -29,6 +29,7 @@ import hello.form.HelloForm;
          HelloForm helloForm = (HelloForm) form;
          log.info(" user = "+helloForm.getName());
 
+         // ユーザネーム取得
          return mapping.findForward("success");
      }
  }
