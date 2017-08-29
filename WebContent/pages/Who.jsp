@@ -9,7 +9,7 @@
     <table border="0">
       <html:errors/>
       <tr><td>
-        あなたの名前は？<br>
+        あなたの名前は！？<br>
         <html:text property="name" size="20" maxlength="30" />です。
       </td></tr>
       <tr><td>
